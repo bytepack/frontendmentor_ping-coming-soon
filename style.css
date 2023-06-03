@@ -1,0 +1,246 @@
+@font-face {
+    font-family: 'Libre Franklin';
+    src: url('fonts/LibreFranklin-Light.woff2') format('woff2'),
+    url('fonts/LibreFranklin-Light.woff') format('woff'),
+    url('fonts/LibreFranklin-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Libre Franklin';
+    src: local('Libre Franklin SemiBold'), local('Libre-Franklin-SemiBold'),
+    url('fonts/LibreFranklin-SemiBold.woff2') format('woff2'),
+    url('fonts/LibreFranklin-SemiBold.woff') format('woff'),
+    url('fonts/LibreFranklin-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Libre Franklin';
+    src: local('Libre Franklin Bold'), local('Libre-Franklin-Bold'),
+    url('fonts/LibreFranklin-Bold.woff2') format('woff2'),
+    url('fonts/LibreFranklin-Bold.woff') format('woff'),
+    url('fonts/LibreFranklin-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary: hsl(223, 87%, 63%);
+    --primary-dark: hsl(223, 87%, 43%);
+    --primary-light: hsl(223, 87%, 73%);
+    --secondary-blue: hsl(223, 100%, 88%);
+    --secondary-red: hsl(354, 100%, 66%);
+    --grey: hsl(0, 0%, 59%);
+    --dark: hsl(209, 33%, 12%);
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.4rem;
+    font-family: 'Libre Franklin', sans-serif;
+    font-weight: 300;
+    color: var(--dark);
+    width: 80%;
+    max-width: 80rem;
+    min-height: 100vh;
+    margin: 0 auto;
+    text-align: center;
+    padding: 7rem 0 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+
+}
+
+.logo{
+    width: 7rem;
+    animation: toBottomAnimation 1s 0.5s both;
+}
+
+.title{
+    font-weight: 700;
+    font-size: 2.1rem;
+    margin: 4rem 0 1rem;
+}
+
+.title__subtext1{
+    font-weight: 300;
+    color: var(--grey);
+    animation: fadeAnimation 1s 0.5s both;
+}
+.title__subtext2{
+    animation: fadeAnimation 1s 1s both;
+}
+
+.subtitle{
+    animation: fadeAnimation 0.5s 1.5s both;
+}
+
+.form{
+    margin: 2rem 0 6rem;
+    animation: toUpAnimation 1s 1s both;
+
+}
+
+.email-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.email, .btn{
+    font-size: 1.4rem;
+    padding: 1.5rem 2.5rem;
+    border-radius: 2000px;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.email{
+    border: 1px solid var(--grey);
+}
+.email:focus{
+    box-shadow: 0 5px 10px var(--secondary-blue);
+}
+
+.btn{
+    background-color: var(--primary);
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 5px 10px var(--secondary-blue);
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.btn:active{
+    background-color: var(--primary-light);
+}
+
+.error{
+    color: var(--secondary-red);
+    margin-top: 1rem;
+    visibility: hidden;
+}
+
+.photo {
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0 0 5px var(--grey);
+    animation: fadeAnimation 0.5s 1s both;
+}
+
+.socials{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style-type: none;
+    font-size: 1.6rem;
+    animation: toBottomAnimation 0.5s 1s both;
+}
+
+.socials__link{
+    display: inline-block;
+    text-decoration: none;
+    color: var(--primary);
+    width: 3.2rem;
+    height: 3.2rem;
+    line-height: 3.2rem;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.socials__link i{
+    line-height: inherit;
+}
+
+.socials__link:active{
+    background-color: var(--primary);
+    color: #ffffff;
+}
+
+.copyright{
+    font-size: 1.2rem;
+    margin-top: 2rem;color: var(--grey);
+}
+
+
+
+@keyframes toBottomAnimation {
+    0%{
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeAnimation {
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes toUpAnimation {
+    0%{
+        transform: translateY(20%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media only screen and (min-width: 37.5em) {
+
+    .title{
+        font-size: 3.2rem;
+    }
+    .email-wrapper{
+        flex-direction: row;
+    }
+
+    .email{
+        flex-grow: 4;
+    }
+
+    .btn{
+        flex-grow: 1;
+    }
+
+    .error{
+        text-align: left;
+        margin-left: 2.5rem;
+    }
+}
+
+@media (hover: hover) and (pointer: fine){
+    .btn:hover{
+        background-color: var(--primary-light);
+    }
+
+    .socials__link:hover{
+        background-color: var(--primary);
+        color: #ffffff;
+    }
+
+}
