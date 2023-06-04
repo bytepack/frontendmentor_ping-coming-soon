@@ -112,6 +112,10 @@ body {
 .email{
     border: 1px solid var(--grey);
 }
+
+.email--error{
+    border: 1px solid var(--secondary-red);
+}
 .email:focus{
     box-shadow: 0 5px 10px var(--secondary-blue);
 }
